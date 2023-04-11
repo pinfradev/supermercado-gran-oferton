@@ -1,0 +1,13 @@
+.product-list-header {
+    background-color: antiquewhite;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 5px solid black;
+}
+
+.product-list-header__image {
+    height: 80%;
+    width: 100px;
+}

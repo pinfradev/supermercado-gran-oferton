@@ -1,0 +1,10 @@
+.user-elements {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+
+.user-elements__image {
+    display: block;
+    height: 80%;
+}
