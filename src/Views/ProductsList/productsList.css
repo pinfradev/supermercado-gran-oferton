@@ -1,13 +1,29 @@
+.product-list {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
 .product-list-header {
-    background-color: antiquewhite;
+    background-color: var(--gray-color-light);
     height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid var(--gray-color-line);
+    padding-right: 3%;
+    padding-left: 8%;
 }
 
 .product-list-header__image {
     height: 80%;
     width: 100px;
+}
+
+.product-list-header__figure {
+    margin: 0;
+    display: grid;
+    place-items: center;
 }
