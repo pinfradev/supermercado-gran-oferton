@@ -3,6 +3,7 @@ import { ProductsListHeader } from './Components/ProductListHeader'
 import { useUserInformation } from '../useUserInformation'
 import { UserElements } from './Components/UserElements/UserElements'
 import { SupermarketTitle } from './Components/SupermarketTitle/SupermarketTitle'
+import { ProductsListContainer } from './Components/ProductsListContainer/ProductsListContainer'
 import car from '../../assets/cart.jpg'
 function ProductsList() {
     const [
@@ -12,9 +13,9 @@ function ProductsList() {
 const titleComponent1 = 'Supermercado'
 const titleComponent2 = "Gran ofertón"
     return (
-        <>
+        <main className='product-list'>
         <ProductsListHeader>
-            <figure >
+            <figure className='product-list-header__figure'>
                 <img src={car} className='product-list-header__image'/>
             </figure>
             {console.log(profileUrl)}
@@ -28,7 +29,8 @@ const titleComponent2 = "Gran ofertón"
             titleComponent1={titleComponent1}
             titleComponent2 = {titleComponent2}
         />
-        </>
+        <ProductsListContainer/>
+        </main>
     )
 }
 
