@@ -4,7 +4,7 @@ import { useUserInformation } from '../useUserInformation'
 import { UserElements } from './Components/UserElements/UserElements'
 import { SupermarketTitle } from './Components/SupermarketTitle/SupermarketTitle'
 import { ProductsListContainer } from './Components/ProductsListContainer/ProductsListContainer'
-import car from '../../assets/cart.jpg'
+import car from '../../assets/cart.png'
 import { Row } from 'react-bootstrap'
 function ProductsList() {
     const [
