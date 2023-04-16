@@ -44,11 +44,12 @@ function ProductsListContainer() {
                         <ProductsGrid>
                             {products.map((product) => (
                                 <ProductItem
+                                    key={product.id}
                                     product={product}
                                 />
                             ))}
                         </ProductsGrid>
-                    </Col>``
+                    </Col>
             </Row>
         </Container>
     )

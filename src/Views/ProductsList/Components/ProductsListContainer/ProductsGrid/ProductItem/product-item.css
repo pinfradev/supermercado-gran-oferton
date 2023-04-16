@@ -9,6 +9,7 @@
     padding: 5% 0 0;
     height: 171px;
     border: 2px solid var(--gray-color);
+    cursor: pointer;
 }
 
 .product-item_image {
