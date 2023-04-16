@@ -5,6 +5,7 @@ import { UserElements } from './Components/UserElements/UserElements'
 import { SupermarketTitle } from './Components/SupermarketTitle/SupermarketTitle'
 import { ProductsListContainer } from './Components/ProductsListContainer/ProductsListContainer'
 import car from '../../assets/cart.jpg'
+import { Row } from 'react-bootstrap'
 function ProductsList() {
     const [
         user,
@@ -13,7 +14,8 @@ function ProductsList() {
 const titleComponent1 = 'Supermercado'
 const titleComponent2 = "Gran ofertón"
     return (
-        <main className='product-list'>
+        <Row>
+ <main className='product-list'>
         <ProductsListHeader>
             <figure className='product-list-header__figure'>
                 <img src={car} className='product-list-header__image'/>
@@ -31,6 +33,8 @@ const titleComponent2 = "Gran ofertón"
         />
         <ProductsListContainer/>
         </main>
+        </Row>
+       
     )
 }
 
