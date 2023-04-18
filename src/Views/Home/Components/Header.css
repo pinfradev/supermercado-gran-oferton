@@ -1,9 +1,10 @@
 .navbar__bg--black{
-    background: #000000;
-    color: var(--colorPrimario);
+    background: var(--gray-color-light);
+    color: black;
+    border-bottom: 3px solid var(--gray-color);
 }
 .navbar__bg--black .nav-link, .navbar-brand{
-    color: var(--colorPrimario);
+    color: black;
     font-size: 18px;
     font-weight: bold;
 }
