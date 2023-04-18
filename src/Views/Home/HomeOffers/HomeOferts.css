@@ -1,0 +1,17 @@
+.oferts__img{
+    width: 100%;
+}
+.oferts__price {
+    color: red;
+    font-weight: bold;
+  }
+  .oferts__price--antes {
+    text-decoration: line-through;
+  }
+  @media (min-width: 768px) {
+    .oferts__img{
+        width: 100%;
+        min-height: 489px;
+        object-fit: cover;
+    }
+  }

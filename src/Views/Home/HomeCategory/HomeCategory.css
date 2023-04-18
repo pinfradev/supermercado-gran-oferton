@@ -1,0 +1,21 @@
+.category__items{
+   padding: 10px;
+   cursor: pointer;
+}
+.category__title{
+    font-weight: bold;
+}
+.category__img{
+    max-width: 250px;
+    display: table;
+    margin: 0 auto;
+}
+.category__gap{
+    gap: 20px;;
+}
+.category__img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }

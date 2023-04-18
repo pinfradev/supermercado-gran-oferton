@@ -1,0 +1,12 @@
+.navbar__bg--black{
+    background: #000000;
+    color: var(--colorPrimario);
+}
+.navbar__bg--black .nav-link, .navbar-brand{
+    color: var(--colorPrimario);
+    font-size: 18px;
+    font-weight: bold;
+}
+.navbar .navbar-collapse{
+    max-width: max-content;
+}
