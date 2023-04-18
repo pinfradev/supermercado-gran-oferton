@@ -1,24 +1,30 @@
-import logo from '../../logo.svg'
-
+import Footer from './Components/Footer';
+import Header from './Components/Header';
+import HomeCategory from './HomeCategory/HomeCategory';
+import HomeProductFeactured from './HomeProductFeactured/HomeProductFeactured';
+import HomeOffers from './HomeOffers/HomeOferts';
 function Home() {
     return (
-        <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <>
+        <Header/>
+        <div className="container__home pb-5">
+            <h1 className='title__primary text-center mt-5 mb-5'>Supermercado <span className='color__primary'>Gran oferton</span></h1>
+                <div className="row">
+                    <div className="col-12">
+                        <HomeProductFeactured/>
+                    </div>
+                    <div className="container">
+                        <HomeCategory/>
+                    </div>
+                    
+                    <div className="container">
+                        <HomeOffers/>
+                    </div>
+                </div>
+            </div>
+            <Footer/>
+        </>
     )
 }
 
-export {Home}
+export { Home }

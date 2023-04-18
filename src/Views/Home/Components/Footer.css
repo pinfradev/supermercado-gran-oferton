@@ -1,0 +1,24 @@
+/*Estilos genericos*/
+.content__list--gap{
+    gap: 20px;
+  }
+  .list__style {
+    list-style: none;
+    color: #ffffff;
+  }
+  .bg-black{
+    background-color: #000000;
+  }
+  .bi__font--size{
+    font-size: 25px;
+  }
+  .footer__legal{
+    color: var(--colorPrimario);
+  }
+  @media  (min-width: 768px) {
+    .footer__market{
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  }

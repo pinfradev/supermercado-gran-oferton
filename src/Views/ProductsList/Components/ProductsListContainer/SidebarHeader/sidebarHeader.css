@@ -1,0 +1,22 @@
+.sidebar-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+}
+
+.sidebar-header_title {
+    width: 100%;
+    text-justify: center;
+    margin: 0;
+    text-align: center;
+
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--gray-color)
+}
+
+.sidebar-header_icon {
+    width: 30px;
+    justify-self: flex-start;
+}

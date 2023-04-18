@@ -1,0 +1,10 @@
+button.promotion-button {
+    padding: 15px;
+    background-color: #DC5345;
+    color: white;
+    min-width: 100px;
+    width: 30%;
+    border-radius: 10px;
+    border: none;
+    font-size: small;
+}

@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+}
+.products-list-container {
+    height: 100%;
+}
+
+.menu-item-set_title {
+    font-size: 2rem;
+}
+
+.products-list-container .side-menu {
+    padding: 30px 0 0 20px;
+    background-color: var(--gray-color-light);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.side-menu {
+    transition:  display 1s ease-in-out;
+}
+
+.menu-item-set {
+    display: flex;
+    flex-direction: column;
+     margin: 1rem;
+     align-items: center;
+}
+
+.menu-item-set_title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 30px;
+}
+
+.menu-sub-item {
+    display: grid;
+    place-items: center;
+   width: 100%;
+   height: 40px;
+   background-color: var(--gray-color-line);
+   color: black;
+   border: 1px solid black;
+   font-size: 2rem;
+}
+
+.menu-sub-item__name {
+    margin: 0;
+}
+
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+  
+  input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+  
+    /* Hides the slider so custom styles can be added */
+    background: black; 
+    border-color: black;
+    color: black;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* border: 1px solid #000000; */
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background: var(--gray-color-line);
+    cursor: pointer;
+    margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    /* box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; Add cool effects to your sliders! */
+  }
+  
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 1px;
+    background-color: #000000;
+  }
+
+  input[type=range]::-moz-range-track {
+    height: 1px;
+    background-color: #000000;
+  }
+
+  /* All the same stuff for Firefox */
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    background: var(--gray-color-line);
+    cursor: pointer;
+  }
+  
+  /* All the same stuff for IE */
+  input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+
+  .slider-range {
+    display: flex;
+  }
+
+  .white-circle {
+    width: 40px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #ffffff;
+  }
+
+  .slider-range {
+    width: 50%;
+  }
+
+  .products-list-container .slider-values {
+    margin-top: 30px;
+    width: 60%;
+  }
+
+  .slider-values_maximum,
+  .slider-values_minimum {
+    font-size: large;
+    font-weight: 400;
+  }
+  .slider-values_maximum {
+    text-align: right;
+  }
+
+  @media screen and (max-width: 615px){
+    .side-menu {
+        display: none;
+    }
+  }
