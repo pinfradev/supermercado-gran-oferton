@@ -4,6 +4,7 @@ function ProductsGrid({children}) {
     return (
         <div className='products-grid'>
             {children}
+            <p>entrando</p>
         </div>
     )
 }
