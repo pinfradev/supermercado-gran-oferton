@@ -41,7 +41,7 @@ function AdminLogin() {
             }
         }).then(response => {
             console.log(response)
-            navigate('/administrator', {
+            navigate('/admin-page', {
                 state: {
                     ...response
                 }
