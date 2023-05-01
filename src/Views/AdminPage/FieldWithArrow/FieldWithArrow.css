@@ -1,0 +1,48 @@
+.selector-field {
+    padding: 1px 10px;
+    background-color: var(--gray-color-light);
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.selector-field p {
+    color: var(--gray-color);
+    font-size: medium;
+    margin-bottom: 1px;
+}
+
+.selector-field_options {
+    background-color: white;
+    color: black;
+    overflow-y: scroll;
+    list-style: none;
+    z-index: 2;
+    position: absolute;
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 40%;
+    height: 100px;
+    padding: 0;
+}
+
+.selector-field_options li {
+    border-bottom: 1px solid black ;
+    padding: 3px;
+    margin-left: 2px;
+
+}
+
+.selector-field_chooser p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: black;
+}
+
+.down-arrow {
+   height: 15px; 
+}
