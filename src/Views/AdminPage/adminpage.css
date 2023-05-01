@@ -1,0 +1,14 @@
+.product-info {
+    height: 52px;
+}
+button.promotion-button {
+    width: 100%;
+}
+
+.field div.product-info {
+    width: 100%;
+}
+
+.field .padding div.product-info {
+    width: 85%
+}
