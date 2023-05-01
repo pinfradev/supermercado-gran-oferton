@@ -11,6 +11,7 @@ import { NoArrowField } from "./NoArrowField/NoArrowField"
 import { TextAreaInfo } from "./TextAreaInfo/TextAreaInfo"
 import { useManageProduct } from "./useManageProduct"
 import {Loader} from '../Loader/Loader'
+import { useNavigate } from "react-router-dom"
 function AdminProductPage() {
     const [stock, setStock] = React.useState(0)
     const [location, setLocation] = React.useState('')
@@ -27,6 +28,7 @@ function AdminProductPage() {
         getProduct
     } = useManageProduct()
 
+    const navigate = useNavigate()
     return (
         <Container className="ml-3 mr-3"> 
             <Row className="mb-5">
@@ -54,7 +56,7 @@ function AdminProductPage() {
                             <PromotionButton
                                 title="Consultar Producto"
                                 clickMethod={ () => {
-                                    // setIsLoading(true)
+                                    setIsLoading(true)
                                     getProduct(id)
                                     .then((product) => {
                                         setId(product.id)
@@ -65,7 +67,7 @@ function AdminProductPage() {
                                         setName('')
                                         setPrice('')
                                         setDescription('')
-                                        // setShowAlert(true)
+                                        setShowAlert(true)
                                     }).finally(() => {
                                         setIsLoading(false)
                                     })
@@ -156,11 +158,17 @@ function AdminProductPage() {
                         <Col>
                             <PromotionButton
                                 title="Registrar nuevo producto"
+                                clickMethod = {() => {
+                                    navigate("/administrator")
+                                }}
                             />
                         </Col>
                         <Col sm={{offset: 1}}>
                             <PromotionButton
                                 title="Modificar producto"
+                                clickMethod = {() => {
+                                    navigate("/administrator")
+                                }}
                             />
                         </Col>
                     </Row>
@@ -168,11 +176,17 @@ function AdminProductPage() {
                         <Col>
                             <PromotionButton
                                 title="Desactivar producto"
+                                clickMethod = {() => {
+                                    navigate("/administrator")
+                                }}
                             />
                         </Col>
                         <Col sm={{offset: 1}}>
                             <PromotionButton
                                 title="Activar producto"
+                                clickMethod = {() => {
+                                    navigate("/administrator")
+                                }}
                             />
                         </Col>
                     </Row>
@@ -182,7 +196,7 @@ function AdminProductPage() {
             {isLoading && <Loader/>}
             
             {showAlert &&
-                <Alert variant="primary" dismissible onClose={() => setShowAlert(false)}>
+                <Alert variant="primary" dismissible>
                     Ha ocurrido un error
                 </Alert>}
         </Container>
