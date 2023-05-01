@@ -3,6 +3,7 @@ import Header from './Components/Header';
 import HomeCategory from './HomeCategory/HomeCategory';
 import HomeProductFeactured from './HomeProductFeactured/HomeProductFeactured';
 import HomeOffers from './HomeOffers/HomeOferts';
+import { AdminPage } from '../AdminPage/AdminPage';
 import './home.css'
 function Home() {
     return (
@@ -23,6 +24,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <AdminPage/>
             <Footer/>
         </>
     )
