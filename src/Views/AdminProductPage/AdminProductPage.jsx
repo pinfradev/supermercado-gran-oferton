@@ -21,7 +21,6 @@ function AdminProductPage() {
     const [color, setColor] = React.useState('')
     const [category, setCategory] = React.useState('')
     const [description, setDescription] = React.useState('')
-    const [showAlert, setShowAlert] = React.useState(false)
     const [isLoading, setIsLoading] = React.useState(false)
 
     const {
@@ -48,6 +47,7 @@ function AdminProductPage() {
                     title="Id del producto"
                     value={id}
                     onChange = {(event) => setId(event.target.value)}
+                    readOnly = {false}
                    /> 
                 </Col>
                 <Col sm={{offset:1}}>
@@ -59,15 +59,17 @@ function AdminProductPage() {
                                     setIsLoading(true)
                                     getProduct(id)
                                     .then((product) => {
-                                        setId(product.id)
-                                        setName(product.productName)
-                                        setPrice(product.price)
-                                        setDescription(product.description)
+                                        if(product) {
+                                            setId(product.id)
+                                            setName(product.productName)
+                                            setPrice(product.price)
+                                            setStock(product.stock)
+                                            setDescription(product.description)
+                                        } else {
+                                            alert('Ocurrio un error')
+                                        }
                                     }).catch((error) => {
-                                        setName('')
-                                        setPrice('')
-                                        setDescription('')
-                                        setShowAlert(true)
+                                        alert('Ocurrio un error')
                                     }).finally(() => {
                                         setIsLoading(false)
                                     })
@@ -97,6 +99,7 @@ function AdminProductPage() {
                     title="Precio"
                     value={price}
                     onChange = {(event) => setPrice(event.target.value)}
+                    readOnly = {true}
                    /> 
                 </Col>
             </Row>
@@ -149,7 +152,7 @@ function AdminProductPage() {
                 <TextAreaInfo
                     title="Descripcion del producto"
                     text={description}
-                    changeText={(event) => setDescription(event.target.value)}
+                    changeText={(value) => setDescription(value)}
                 />
             </Row>
             <Row className="mt-5 d-flex justify-content-center">
@@ -194,11 +197,6 @@ function AdminProductPage() {
             </Row>
             
             {isLoading && <Loader/>}
-            
-            {showAlert &&
-                <Alert variant="primary" dismissible>
-                    Ha ocurrido un error
-                </Alert>}
         </Container>
     )
 }

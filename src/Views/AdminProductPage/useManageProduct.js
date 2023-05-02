@@ -9,7 +9,6 @@ function useManageProduct() {
                 const currentProduct = data.json()
                 resolve(currentProduct)
             } catch(error) {
-
                 reject(error)
             }
        })
