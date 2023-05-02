@@ -1,9 +1,9 @@
 import './promotion-button.css'
 
-function PromotionButton() {
+function PromotionButton({title, clickMethod}) {
     return (
-        <button type="button" className="promotion-button">
-            En promoción
+        <button type="button" className="promotion-button" onClick={() => clickMethod ? clickMethod() : console.log("click not defined")}>
+            {title ? title : 'Promoción'}
         </button>
     )
 }

@@ -1,0 +1,42 @@
+div.form-input {
+    display: flex;
+    padding: 5px 20px 5px;
+    border-radius: 10px;
+    background-color: var(--gray-color-light);
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-input_left {
+    padding: 0 1px;
+    width: 100%;
+}
+
+.form-input_left p {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    color: var(--gray);
+}
+
+.form-input_input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: black;
+    outline: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-weight: 700;
+    font-size: large;
+}
+
+.password {
+    -webkit-text-security: square;
+}
+
+.form-input_icon {
+    height: 50px;
+}

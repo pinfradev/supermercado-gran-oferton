@@ -3,54 +3,65 @@ import './productlistcontainer.css'
 import { SidebarHeader } from "./SidebarHeader/SidebarHeader"
 import { SidebarItem } from "./SidebarItem/SidebarItem"
 import { ProductsGrid } from "./ProductsGrid/ProductsGrid"
-import { products } from "../../../../models/products"
 import { ProductItem } from "./ProductsGrid/ProductItem/ProductItem"
+import { useProductInformation } from "./useProductsInformation"
+import { Loader } from "../../../Loader/Loader"
 function ProductsListContainer() {
+    const {
+        products,
+        setFetchProducts,
+        isLoading
+    } = useProductInformation()
+
     return (
         <Container fluid className="products-list-container">
             <Row className="h-100">
-                    <Col sm={5} md={4} lg={3} xl={2.1} className="side-menu">
-                        <div className="menu-item-set">
-                            <SidebarHeader/>
-                            {menuOptions.map((option) => {
-                                    return (
-                                    <SidebarItem key={option.id}
-                                        itemName = {option.optionName}
-                                        renderSubMenu = {() => (
-                                            renderMenuItems(option)
-                                        )}
-                                    />)
-                                })
-                            }
+                <Col sm={5} md={4} lg={3} xl={2.1} className="side-menu">
+                    <div className="menu-item-set">
+                        <SidebarHeader />
+                        {menuOptions.map((option) => {
+                            return (
+                                <SidebarItem key={option.id}
+                                    itemName={option.optionName}
+                                    renderSubMenu={() => (
+                                        renderMenuItems(option)
+                                    )}
+                                />)
+                        })
+                        }
+                    </div>
+                    <div className="menu-item-set">
+                        <p className="menu-item-set_title">Rango de precio</p>
+                        <div className="slider-range">
+                            <div className="white-circle"></div>
+                            <input type="range" min={0} max={20000} />
+                            <div className="white-circle"></div>
                         </div>
-                        <div className="menu-item-set">
-                            <p className="menu-item-set_title">Rango de precio</p>
-                            <div className="slider-range">
-                                <div className="white-circle"></div>
-                                    <input type="range" min={0} max={20000}/>
-                                <div className="white-circle"></div>
-                            </div>
-                            <Row className="slider-values">
-                                <Col>
-                                    <p className="slider-values_minimum">0$</p>
-                                </Col>
-                                <Col>
-                                    <p className="slider-values_maximum">20.000$</p>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Col>
-                    <Col>
-                        <ProductsGrid>
-                            {products.map((product) => (
+                        <Row className="slider-values">
+                            <Col>
+                                <p className="slider-values_minimum">0$</p>
+                            </Col>
+                            <Col>
+                                <p className="slider-values_maximum">20.000$</p>
+                            </Col>
+                        </Row>
+                    </div>
+                </Col>
+                <Col>
+                    <ProductsGrid>
+                        {
+                            products.map((product) => (
                                 <ProductItem
                                     key={product.id}
                                     product={product}
                                 />
-                            ))}
-                        </ProductsGrid>
-                    </Col>
+                                )
+                            )
+                        }
+                    </ProductsGrid>
+                </Col>
             </Row>
+            {isLoading && <Loader />}
         </Container>
     )
 }
@@ -94,4 +105,4 @@ const menuOptions = [
         ]
     }
 ]
-export {ProductsListContainer}
+export { ProductsListContainer }
