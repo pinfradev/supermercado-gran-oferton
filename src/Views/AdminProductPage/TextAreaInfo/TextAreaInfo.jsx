@@ -10,7 +10,7 @@ function TextAreaInfo({
             <p>
                 {title}
             </p>
-            <textarea value={text} onChange={(event => changeText(event))} />
+            <textarea value={text} onChange={(event => changeText(event.target.value))} />
         </div>
     )
 }

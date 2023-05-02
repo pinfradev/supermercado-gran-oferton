@@ -11,6 +11,7 @@ import { NoArrowField } from "./NoArrowField/NoArrowField"
 import { TextAreaInfo } from "./TextAreaInfo/TextAreaInfo"
 import { useManageProduct } from "./useManageProduct"
 import {Loader} from '../Loader/Loader'
+import { useNavigate } from "react-router-dom"
 function AdminProductPage() {
     const [stock, setStock] = React.useState(0)
     const [location, setLocation] = React.useState('')
@@ -20,13 +21,13 @@ function AdminProductPage() {
     const [color, setColor] = React.useState('')
     const [category, setCategory] = React.useState('')
     const [description, setDescription] = React.useState('')
-    const [showAlert, setShowAlert] = React.useState(false)
     const [isLoading, setIsLoading] = React.useState(false)
 
     const {
         getProduct
     } = useManageProduct()
 
+    const navigate = useNavigate()
     return (
         <Container className="ml-3 mr-3"> 
             <Row className="mb-5">
@@ -46,6 +47,7 @@ function AdminProductPage() {
                     title="Id del producto"
                     value={id}
                     onChange = {(event) => setId(event.target.value)}
+                    readOnly = {false}
                    /> 
                 </Col>
                 <Col sm={{offset:1}}>
@@ -54,18 +56,20 @@ function AdminProductPage() {
                             <PromotionButton
                                 title="Consultar Producto"
                                 clickMethod={ () => {
-                                    // setIsLoading(true)
+                                    setIsLoading(true)
                                     getProduct(id)
                                     .then((product) => {
-                                        setId(product.id)
-                                        setName(product.productName)
-                                        setPrice(product.price)
-                                        setDescription(product.description)
+                                        if(product) {
+                                            setId(product.id)
+                                            setName(product.productName)
+                                            setPrice(product.price)
+                                            setStock(product.stock)
+                                            setDescription(product.description)
+                                        } else {
+                                            alert('Ocurrio un error')
+                                        }
                                     }).catch((error) => {
-                                        setName('')
-                                        setPrice('')
-                                        setDescription('')
-                                        // setShowAlert(true)
+                                        alert('Ocurrio un error')
                                     }).finally(() => {
                                         setIsLoading(false)
                                     })
@@ -95,6 +99,7 @@ function AdminProductPage() {
                     title="Precio"
                     value={price}
                     onChange = {(event) => setPrice(event.target.value)}
+                    readOnly = {true}
                    /> 
                 </Col>
             </Row>
@@ -147,7 +152,7 @@ function AdminProductPage() {
                 <TextAreaInfo
                     title="Descripcion del producto"
                     text={description}
-                    changeText={(event) => setDescription(event.target.value)}
+                    changeText={(value) => setDescription(value)}
                 />
             </Row>
             <Row className="mt-5 d-flex justify-content-center">
@@ -156,11 +161,17 @@ function AdminProductPage() {
                         <Col>
                             <PromotionButton
                                 title="Registrar nuevo producto"
+                                clickMethod = {() => {
+                                    navigate("/administrator")
+                                }}
                             />
                         </Col>
                         <Col sm={{offset: 1}}>
                             <PromotionButton
                                 title="Modificar producto"
+                                clickMethod = {() => {
+                                    navigate("/administrator")
+                                }}
                             />
                         </Col>
                     </Row>
@@ -168,11 +179,17 @@ function AdminProductPage() {
                         <Col>
                             <PromotionButton
                                 title="Desactivar producto"
+                                clickMethod = {() => {
+                                    navigate("/administrator")
+                                }}
                             />
                         </Col>
                         <Col sm={{offset: 1}}>
                             <PromotionButton
                                 title="Activar producto"
+                                clickMethod = {() => {
+                                    navigate("/administrator")
+                                }}
                             />
                         </Col>
                     </Row>
@@ -180,11 +197,6 @@ function AdminProductPage() {
             </Row>
             
             {isLoading && <Loader/>}
-            
-            {showAlert &&
-                <Alert variant="primary" dismissible onClose={() => setShowAlert(false)}>
-                    Ha ocurrido un error
-                </Alert>}
         </Container>
     )
 }
