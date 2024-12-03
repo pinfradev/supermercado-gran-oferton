@@ -1,0 +1,7 @@
+- name: build
+  service: app
+  command: npm install
+
+- name: test
+  service: app
+  command: npm test
